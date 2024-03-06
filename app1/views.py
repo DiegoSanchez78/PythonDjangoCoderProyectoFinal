@@ -9,7 +9,6 @@ from django.urls import reverse
 from django.core.mail import EmailMessage
 
 
-# Create your views here.
 def inicio(request):
     
     
@@ -26,35 +25,17 @@ def inicio(request):
     avatares = Avatar.objects.all()
 
     if avatares:
-        # Check if there's at least one avatar
+       
         avatar = avatares[0]
         if avatar.imagen:
-            # Check if the avatar has an associated image
+            
             print(avatar.imagen.url)
             return render(request, 'app1/index.html', {"url": avatar.imagen.url})
 
-    # Handle the case where there are no avatars or no associated image
+    
     print("No avatars or image file found.")
     return render(request, 'app1/index.html', {"url": None})
 
-    # avatares = Avatar.objects.all()
-    
-    # if avatares and avatares[0].imagen:
-    #     print(avatares[0].imagen.url)
-    #     return render(request, 'app1/index.html', {"url": avatares[0].imagen.url})
-    # else:
-    #     print("No avatars or image file found.")
-    #     return render(request, 'app1/index.html', {"url": None})
-   
-    # avatares = Avatar.objects.all()
-
-    # if avatares:
-    #     return render(request, 'app1/index.html', {"url": avatares[0].imagen.url})
-    # else:
-    #     return render(request, 'app1/index.html', {"url": None})
-    # if request.method == 'POST':
-
-        
 
    
 
@@ -62,8 +43,7 @@ def inicio(request):
 def cursos(request):
     if request.method == "POST":
  
-            miFormulario = CursoForm(request.POST, request.FILES) # Aqui me llega la informacion del html
-            # print(miFormulario)
+            miFormulario = CursoForm(request.POST, request.FILES)
  
             if miFormulario.is_valid():
                   informacion = miFormulario.cleaned_data
@@ -77,7 +57,7 @@ def cursos(request):
 def estudiantes(request):
     if request.method == "POST":
  
-            miFormulario = EstudianteForm(request.POST) # Aqui me llega la informacion del html
+            miFormulario = EstudianteForm(request.POST) 
             print(miFormulario)
  
             if miFormulario.is_valid:
@@ -92,7 +72,7 @@ def estudiantes(request):
 def profesores(request):
     if request.method == "POST":
  
-            miFormulario = ProfesorForm(request.POST) # Aqui me llega la informacion del html
+            miFormulario = ProfesorForm(request.POST) 
             print(miFormulario)
  
             if miFormulario.is_valid:
@@ -117,7 +97,7 @@ def form_curso(request):
 def form_curso_2(request):
     if request.method == "POST":
  
-            miFormulario = CursoForm(request.POST) # Aqui me llega la informacion del html
+            miFormulario = CursoForm(request.POST) 
             print(miFormulario)
  
             if miFormulario.is_valid:
