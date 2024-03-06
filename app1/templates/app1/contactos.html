@@ -1,0 +1,82 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block title %} Contacto{% endblock %}
+{% block contenidoDeIndex %}
+
+<section id="section-contact" class="section">
+    <div class="container" data-scrollreveal="enter left and move 40px over 0.8s">
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div>
+                    <h2 class="heading">Contactanos</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <!-- <table>
+    {{form.as_table  }}
+</table> -->
+    <div class="container">
+        <div class="row" data-scrollreveal="enter right and move 40px, over 0.8s">
+            <div class="col-md-8">
+                <form action="" method="post">
+                    {% csrf_token %}
+                <div id="contact-form">
+
+
+                    <div class="col-md-6 form-group">
+                        <!-- <label for="name">Nombre</label>
+                        <input type="text" name="name" class="form-control" id="name" placeholder="Nombre" /> -->
+                        {{form.nombre}}
+                    </div>
+                    <div class="col-md-6 form-group">
+                        <!-- <label for="email">Email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Email" /> -->
+                        {{form.email}}
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <!-- <label for="subject">Asunto</label>
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Asunto" /> -->
+                        {{form.asunto}}
+                    </div>
+                    <div class="col-md-12 form-group">
+                        <!-- <label>Mensaje</label>
+                        <textarea class="form-control" name="message" rows="5"></textarea> -->
+                        {{form.mensaje}}
+
+                    </div>
+
+                    <button type="submit" style="height: 40px; margin-bottom: 50px;"
+                        class="col-md-offset-4 col-md-4 btn btn-primary fs-3">Enviar</button>
+
+
+                </div>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <div data-scrollreveal='over 0.8s'>
+                    <div class="align-center" style="margin-top: 100px;">
+
+                        <i class="fa fa-map-marker fa-5x"></i>
+                        <h4 class="text-bold" style="font-size: 30px;">Nuestra ubicacion</h4>
+                        <p>
+                            Cabildo 855, Ciudad de Buenos Aires , Argentina
+                        </p>
+                        <p>
+                            Telefono: +044-678-098
+                        </p>
+                        <p>
+                            Mail: institutolf.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <!-- ./span12 -->
+        </div>
+
+    </div>
+</section>
+
+{% endblock contenidoDeIndex %}

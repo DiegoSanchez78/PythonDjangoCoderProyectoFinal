@@ -1,0 +1,32 @@
+{% extends 'app1/base.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+
+    {# Este div sólo está agregado para centrar el formulario en la página usando Bootstrap #}
+    <div class="d-flex flex-column align-items-center fs-3 text " style="background-color: #37AFFF;">
+
+        {# Con este div colocamos el título y debajo el formulario usando Bootstrap #}
+        <div class="d-flex flex-column">
+
+            {# Mensaje personalizado en la vista de Login con estilos de Bootstrap #}
+            <p class="fs-5 fw-bold">{{ msg_register }}</p>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+                
+                {{ form.as_p }}
+                <input type="submit" value="Registrarse" class="btn btn-primary my-3 fs-3">
+
+            </form>
+
+        </div>
+        
+    </div>
+    <div style="background-color: #37AFFF  ;  flex: 1; height: 36vh;">
+
+    </div>
+{% endblock main %}

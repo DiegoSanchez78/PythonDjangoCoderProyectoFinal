@@ -1,0 +1,19 @@
+{% extends 'app1/base.html' %}
+{% load static %}
+
+{% block title %} Nosotros {% endblock %}
+{% block contenidoDeIndex %}
+<div class="d-flex flex-column align-items-center fs-3 text  mobile-bars"style="background-color: #37AFFF;">
+    <h1 class="mx-5 my-4">Instituto de enseñanza de gastronomia Luis Fernando</h1>
+  <p class="mx-5 my-4 " >El instituto fue fundado en 1998 por Luis Fernando, quienes reconocieron la urgente necesidad de profesionalizar la Industria de la Hospitalidad y todas la Áreas que la conforman: gastronomía, pastelería, gerenciamiento gastronómico, sommellerie y servicio y organización de eventos.</p>
+  <p class="mx-5 my-4 "> Actualmente en la Argentina el instituto cuenta con sedes en la Ciudad de Buenos Aires, en zona norte en Pilar y en Rosario, Provincia de Santa Fe.</p>
+  <p  class="mx-5 my-4 ">Al igual que sus fundadores, nuestros graduados han alcanzado un destacado reconocimiento en el mercado nacional e internacional, logrando de esta forma los más altos galardones.</p>
+  <p  class="mx-5 my-4 ">Con el objetivo de responder exitosamente a una demanda cada vez más exigente, las carreras y cursos dictados brindan una educación de excelencia y una formación profesional altamente competitiva.</p>
+  <p  class="mx-5 my-4 ">Asimismo, a fin de generar capacidades de dirección, liderazgo, planificación y organización del negocio gastronómico adermás de las carreras de las tradionales carreras de Cocina y Pastelería se constituyeron Carreras y Cursos de Administración Gastronómica y Organización de Eventos.</p>
+  <p  class="mx-5 my-4">Por otra parte, el instituto cuenta con cursos cortos para aficionados y de especialización para todos aquellos profesionales que deseen continuar perfeccionando sus conocimientos.</p>
+  <p  class="mx-5 my-4 ">Desde la dedicación y experiencia de nuestros expertos instructores que practican las últimas técnicas de enseñanza y entrenamiento, hasta las más modernas instalaciones que permiten un aprendizaje comparable al de las mejores escuelas gastronómicas del mundo, en Gato Dumas todo se encuentra dispuesto para ofrecer una educación sin igual.</p>
+    <a type="button" href="{% url 'inicio' %}" class="btn btn-primary fs-3">Volver></a>
+
+  </p>
+</div>
+{% endblock contenidoDeIndex %}

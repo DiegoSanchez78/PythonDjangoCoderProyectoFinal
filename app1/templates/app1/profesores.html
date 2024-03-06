@@ -1,0 +1,39 @@
+
+{% extends 'app1/base.html' %}
+{% load static %}
+{% block title %}Alta profesores {% endblock %}
+{% block contenidoDeIndex %}
+
+
+<section id="Homepage">
+    <div class="d-flex flex-column mb-4 mt-4 align-items-center fs-3 text" >
+        <div class="row">
+            <div data-scrollreveal="wait 0.5s and then ease-in-out 50px">
+
+                <div class="align-center">
+                    <h2 class="main-text">Ingresa los datos del profesor</h2>
+
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div data-scrollreveal="enter from the left 500px" class="col-md-6 col-md-offset-3">
+                
+                <form action="" method="post" class="d-flex flex-column mb-4 mt-4 align-items-center fs-3 text" >
+                   {% csrf_token %} 
+                   <table class="pb-3"> 
+                       {{formulario.as_table}}
+                   </table>
+                   <div>
+                   <input  type="submit" value="Guardar" class="btn btn-primary fs-3 text"  >
+                   </div>
+               </form>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+<div style="background-color: #37AFFF  ;  flex: 1; height: 8vh;">
+
+</div>
+    {% endblock contenidoDeIndex %}

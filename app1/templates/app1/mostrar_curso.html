@@ -1,0 +1,44 @@
+{% extends 'app1/base.html' %}
+{% load static %}   
+
+{% block title %} Cursos {% endblock %}
+
+{% block contenidoDeIndex %}    
+
+
+<h1 class="d-flex flex-wrap d-flex justify-content-center p-4"   style="background-color: #37AFFF;"  >Nuestros Cursos</h1>
+<ul class="d-flex flex-wrap d-flex justify-content-center"   style="background-color: #37AFFF;" >
+    {% for curso in object_list %}
+
+    <li class="m-2 fs-3 border border-primary rounded-3 border Larger shadow " data-scrollreveal="wait 0.5s and then ease-in-out 50px">
+
+      <div class="card d-flex flex-column  align-items-center fs-3 text" style="width: 30rem;">
+        {% if curso.imagen %}
+                <img src="{{ curso.imagen.url }}" class="card-img-top img-fluid img-thumbnail imagenCurso " alt="..."style=" height: 20rem;">
+            {% else %}
+                <p>No image available</p>
+            {% endif %}
+        <div class="card-body">
+          <h5 class="card-title fs-3">{{curso.nombre}}</h5>
+          <p class="card-text">Camada nro: {{curso.camada}}</p>
+          <p>$ {{curso.costo}}</p>
+          <img src="{{object.imagen.url}}" alt="">
+    
+          <p>
+            <a href="{% url 'detail' curso.id %}" class="btn btn-primary fs-3">Detalles</a>
+            {% if request.user.is_authenticated %}
+            <a href="{% url 'delete' curso.id %}" class="btn btn-primary fs-3">Borrar</a>
+            <a href="{% url 'update' curso.id %}" class="btn btn-primary fs-3">Actualizar</a>
+            {% endif %}
+          </p>
+        </div>
+      </div>
+      <!-- <p>{{curso.nombre}}</p> -->
+      
+    </li>
+
+    {% endfor %}
+    
+</ul>         
+
+{% endblock contenidoDeIndex %}

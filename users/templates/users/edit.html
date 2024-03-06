@@ -1,0 +1,24 @@
+{% extends 'app1/base.html' %}
+
+{% load static %}
+
+{% block title %} Login {% endblock title %}
+
+{% block main %}
+    <form action="" method="POST" enctype="multipart/form-data" class="d-flex flex-column  align-items-center fs-3 text" style="background-color: #37AFFF;">
+        {% csrf_token %}
+
+        <table>
+
+            {{ mi_form.as_table }}
+            
+
+        </table>
+        <input type="submit" value="Actualizar" class="btn btn-primary my-3 fs-3">
+            <a type="button" href="{% url 'inicio' %}" class="btn btn-primary my-3 fs-3">Volver</a>
+
+    </form>
+    <div style="background-color: #37AFFF  ;  flex: 1; height: 36vh;">
+
+    </div>
+{% endblock main %}
